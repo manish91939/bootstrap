@@ -230,6 +230,7 @@
 
 -
   browser: >
+<<<<<<< HEAD
     Safari
   summary: >
     `rem` units in media queries should be calculated using `font-size: initial`, not the root element's `font-size`
@@ -250,6 +251,8 @@
 
 -
   browser: >
+=======
+>>>>>>> refs/remotes/twbs/master
     Safari (OS X)
   summary: >
     Weird button behavior with some `<input type="number">` elements.

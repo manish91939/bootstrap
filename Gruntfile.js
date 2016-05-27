@@ -17,11 +17,23 @@ module.exports = function (grunt) {
 
   var fs = require('fs');
   var path = require('path');
+<<<<<<< HEAD
   var isTravis = require('is-travis');
   var mq4HoverShim = require('mq4-hover-shim');
   var autoprefixerSettings = require('./grunt/autoprefixer-settings.js');
   var autoprefixer = require('autoprefixer')(autoprefixerSettings);
 
+=======
+  var generateGlyphiconsData = require('./grunt/bs-glyphicons-data-generator.js');
+  var BsLessdocParser = require('./grunt/bs-lessdoc-parser.js');
+  var getLessVarsData = function () {
+    var filePath = path.join(__dirname, 'less/variables.less');
+    var fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
+    var parser = new BsLessdocParser(fileContent);
+    return { sections: parser.parseFile() };
+  };
+  var generateRawFiles = require('./grunt/bs-raw-files-generator.js');
+>>>>>>> refs/remotes/twbs/master
   var generateCommonJSModule = require('./grunt/bs-commonjs-generator.js');
   var configBridge = grunt.file.readJSON('./grunt/configBridge.json', { encoding: 'utf8' });
 
@@ -265,7 +277,15 @@ module.exports = function (grunt) {
         ]
       },
       docs: {
+<<<<<<< HEAD
         src: 'docs/assets/css/docs.min.css',
+=======
+        src: [
+          'docs/assets/css/ie10-viewport-bug-workaround.css',
+          'docs/assets/css/src/pygments-manni.css',
+          'docs/assets/css/src/docs.css'
+        ],
+>>>>>>> refs/remotes/twbs/master
         dest: 'docs/assets/css/docs.min.css'
       }
     },
@@ -304,6 +324,7 @@ module.exports = function (grunt) {
       }
     },
 
+<<<<<<< HEAD
     htmllint: {
       options: {
         ignore: [
@@ -319,6 +340,50 @@ module.exports = function (grunt) {
           'The “month” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
           'The “time” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.',
           'The “week” input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.'
+=======
+    htmlmin: {
+      dist: {
+        options: {
+          collapseWhitespace: true,
+          conservativeCollapse: true,
+          minifyCSS: true,
+          minifyJS: true,
+          processConditionalComments: true,
+          removeAttributeQuotes: true,
+          removeComments: true
+        },
+        expand: true,
+        cwd: '_gh_pages',
+        dest: '_gh_pages',
+        src: [
+          '**/*.html',
+          '!examples/**/*.html'
+        ]
+      }
+    },
+
+    jade: {
+      options: {
+        pretty: true,
+        data: getLessVarsData
+      },
+      customizerVars: {
+        src: 'docs/_jade/customizer-variables.jade',
+        dest: 'docs/_includes/customizer-variables.html'
+      },
+      customizerNav: {
+        src: 'docs/_jade/customizer-nav.jade',
+        dest: 'docs/_includes/nav/customize.html'
+      }
+    },
+
+    htmllint: {
+      options: {
+        ignore: [
+          'Attribute "autocomplete" not allowed on element "button" at this point.',
+          'Attribute "autocomplete" is only allowed when the input type is "color", "date", "datetime", "datetime-local", "email", "month", "number", "password", "range", "search", "tel", "text", "time", "url", or "week".',
+          'Element "img" is missing required attribute "src".'
+>>>>>>> refs/remotes/twbs/master
         ]
       },
       src: ['_gh_pages/**/*.html', 'js/tests/visual/*.html']
@@ -333,9 +398,15 @@ module.exports = function (grunt) {
         files: 'scss/**/*.scss',
         tasks: ['dist-css', 'docs']
       },
+<<<<<<< HEAD
       docs: {
         files: 'docs/assets/scss/**/*.scss',
         tasks: ['dist-css', 'docs']
+=======
+      less: {
+        files: 'less/**/*.less',
+        tasks: 'less'
+>>>>>>> refs/remotes/twbs/master
       }
     },
 
@@ -458,9 +529,15 @@ module.exports = function (grunt) {
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js']);
 
   // Default task.
+<<<<<<< HEAD
   grunt.registerTask('default', ['clean:dist', 'test']);
 
   grunt.registerTask('commonjs', ['babel:umd', 'npm-js']);
+=======
+  grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
+
+  grunt.registerTask('build-glyphicons-data', function () { generateGlyphiconsData.call(this, grunt); });
+>>>>>>> refs/remotes/twbs/master
 
   grunt.registerTask('npm-js', 'Generate npm-js entrypoint module in dist dir.', function () {
     var srcFiles = Object.keys(grunt.config.get('babel.umd.files')).map(function (filename) {
@@ -471,6 +548,7 @@ module.exports = function (grunt) {
   });
 
   // Docs task.
+<<<<<<< HEAD
   grunt.registerTask('docs-css', ['postcss:docs', 'postcss:examples', 'cssmin:docs']);
   grunt.registerTask('lint-docs-css', ['scsslint:docs']);
   grunt.registerTask('docs-js', ['uglify:docsJs']);
@@ -482,4 +560,14 @@ module.exports = function (grunt) {
 
   // Publish to GitHub
   grunt.registerTask('publish', ['buildcontrol:pages']);
+=======
+  grunt.registerTask('docs-css', ['autoprefixer:docs', 'autoprefixer:examples', 'csscomb:docs', 'csscomb:examples', 'cssmin:docs']);
+  grunt.registerTask('lint-docs-css', ['csslint:docs', 'csslint:examples']);
+  grunt.registerTask('docs-js', ['uglify:docsJs', 'uglify:customize']);
+  grunt.registerTask('lint-docs-js', ['jshint:assets', 'jscs:assets']);
+  grunt.registerTask('docs', ['docs-css', 'lint-docs-css', 'docs-js', 'lint-docs-js', 'clean:docs', 'copy:docs', 'build-glyphicons-data', 'build-customizer']);
+  grunt.registerTask('docs-github', ['jekyll:github', 'htmlmin']);
+
+  grunt.registerTask('prep-release', ['dist', 'docs', 'docs-github', 'compress']);
+>>>>>>> refs/remotes/twbs/master
 };

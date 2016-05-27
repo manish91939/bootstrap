@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 
+<<<<<<< HEAD
+=======
+/* globals Set */
+>>>>>>> refs/remotes/twbs/master
 /*!
  * Script to update version number references in the project.
  * Copyright 2015 Twitter, Inc.

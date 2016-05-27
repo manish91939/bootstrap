@@ -4,6 +4,11 @@
       "../assets/js/vendor/anchor.min.js",
       "../assets/js/vendor/clipboard.min.js",
       "../assets/js/vendor/holder.min.js",
+<<<<<<< HEAD
+=======
+      "../assets/js/vendor/ZeroClipboard.min.js",
+      "../assets/js/vendor/anchor.min.js",
+>>>>>>> refs/remotes/twbs/master
       "../assets/js/src/application.js"
     ]
   }

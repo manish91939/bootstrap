@@ -1,5 +1,9 @@
 /*!
+<<<<<<< HEAD
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
+=======
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+>>>>>>> refs/remotes/twbs/master
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
@@ -3425,13 +3429,23 @@ input[type="button"].btn-block {
 }
 
 .btn-group-vertical > .btn:first-child:not(:last-child) {
+<<<<<<< HEAD
+=======
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+>>>>>>> refs/remotes/twbs/master
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .btn-group-vertical > .btn:last-child:not(:first-child) {
   border-top-right-radius: 0;
+<<<<<<< HEAD
   border-top-left-radius: 0;
+=======
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+>>>>>>> refs/remotes/twbs/master
 }
 
 .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
@@ -3472,9 +3486,60 @@ input[type="button"].btn-block {
   width: 100%;
   margin-bottom: 0;
 }
+<<<<<<< HEAD
 
 .input-group .form-control:focus, .input-group .form-control:active, .input-group .form-control:hover {
   z-index: 3;
+=======
+.input-group .form-control:focus {
+  z-index: 3;
+}
+.input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+select.input-group-lg > .form-control,
+select.input-group-lg > .input-group-addon,
+select.input-group-lg > .input-group-btn > .btn {
+  height: 46px;
+  line-height: 46px;
+}
+textarea.input-group-lg > .form-control,
+textarea.input-group-lg > .input-group-addon,
+textarea.input-group-lg > .input-group-btn > .btn,
+select[multiple].input-group-lg > .form-control,
+select[multiple].input-group-lg > .input-group-addon,
+select[multiple].input-group-lg > .input-group-btn > .btn {
+  height: auto;
+}
+.input-group-sm > .form-control,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+select.input-group-sm > .form-control,
+select.input-group-sm > .input-group-addon,
+select.input-group-sm > .input-group-btn > .btn {
+  height: 30px;
+  line-height: 30px;
+}
+textarea.input-group-sm > .form-control,
+textarea.input-group-sm > .input-group-addon,
+textarea.input-group-sm > .input-group-btn > .btn,
+select[multiple].input-group-sm > .form-control,
+select[multiple].input-group-sm > .input-group-addon,
+select[multiple].input-group-sm > .input-group-btn > .btn {
+  height: auto;
+>>>>>>> refs/remotes/twbs/master
 }
 
 .input-group-addon,
@@ -4468,12 +4533,25 @@ input[type="button"].btn-block {
   z-index: 2;
   color: #fff;
   cursor: default;
+<<<<<<< HEAD
   background-color: #0275d8;
   border-color: #0275d8;
 }
 
 .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
   color: #818a91;
+=======
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #777;
+>>>>>>> refs/remotes/twbs/master
   pointer-events: none;
   cursor: not-allowed;
   background-color: #fff;
@@ -4521,10 +4599,21 @@ input[type="button"].btn-block {
   border-bottom-left-radius: 0.2rem;
   border-top-left-radius: 0.2rem;
 }
+<<<<<<< HEAD
 
 .pagination-sm .page-item:last-child .page-link {
   border-bottom-right-radius: 0.2rem;
   border-top-right-radius: 0.2rem;
+=======
+.pager .disabled > a,
+.pager .disabled > a:hover,
+.pager .disabled > a:focus,
+.pager .disabled > span {
+  color: #777;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #fff;
+>>>>>>> refs/remotes/twbs/master
 }
 
 .tag {
@@ -6165,9 +6254,25 @@ a.bg-danger:focus, a.bg-danger:hover {
 .p-r-0 {
   padding-right: 0 !important;
 }
+<<<<<<< HEAD
 
 .p-b-0 {
   padding-bottom: 0 !important;
+=======
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0);
+  filter: alpha(opacity=50);
+  opacity: .5;
+>>>>>>> refs/remotes/twbs/master
 }
 
 .p-l-0 {
@@ -6229,9 +6334,38 @@ a.bg-danger:focus, a.bg-danger:hover {
 .p-b-2 {
   padding-bottom: 1.5rem !important;
 }
+<<<<<<< HEAD
 
 .p-l-2 {
   padding-left: 1.5rem !important;
+=======
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .icon-prev {
+    margin-left: -10px;
+  }
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-next {
+    margin-right: -10px;
+  }
+  .carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+  }
+  .carousel-indicators {
+    bottom: 20px;
+  }
+>>>>>>> refs/remotes/twbs/master
 }
 
 .p-x-2 {

@@ -55,7 +55,11 @@
   {
     browserName: "iphone",
     platform: "OS X 10.10",
+<<<<<<< HEAD
     version: "latest"
+=======
+    version: "9.2"
+>>>>>>> refs/remotes/twbs/master
   },
 
   # iOS Chrome not currently supported by Sauce Labs
